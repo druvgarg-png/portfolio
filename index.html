@@ -258,37 +258,30 @@
     .wcallout strong{color:var(--t1)}
 
     /* ========= PATENTS ========= */
-    .pat-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:2px}
-    .pat-main{
+    .pat-card{
       position:relative;background:var(--card);border:1px solid rgba(255,255,255,.1);
-      padding:44px 48px;overflow:hidden;
+      padding:48px 52px;overflow:hidden;
+      display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;
     }
-    .pat-main::before{
+    .pat-card::before{
       content:'';position:absolute;top:0;left:0;right:0;height:1px;
-      background:linear-gradient(90deg,transparent,rgba(255,255,255,.14),transparent);
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);
     }
     .pat-badge{
-      display:inline-flex;align-items:center;gap:8px;margin-bottom:22px;
+      display:inline-flex;align-items:center;gap:8px;margin-bottom:24px;
       font-family:'Space Mono',monospace;font-size:9px;
-      color:var(--t4);letter-spacing:.16em;text-transform:uppercase;
+      color:var(--t5);letter-spacing:.18em;text-transform:uppercase;
     }
-    .pat-badge-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.35);animation:lp 2s ease-in-out infinite}
-    .pat-h{font-size:24px;font-weight:600;color:var(--t1);letter-spacing:-.02em;margin-bottom:20px;line-height:1.18}
+    .pat-badge-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.3);animation:lp 2s ease-in-out infinite}
+    .pat-h{font-size:26px;font-weight:600;color:var(--t1);letter-spacing:-.025em;margin-bottom:18px;line-height:1.15}
     .pat-body{font-size:16px;color:var(--t3);line-height:1.78}
-    .pat-body p{margin-bottom:16px}
-    .pat-body p:last-child{margin-bottom:0}
     .pat-body strong{color:var(--t1);font-weight:500}
-    .pat-note{margin-top:20px;font-size:13px;color:var(--t5);line-height:1.6}
-
-    .pat-claims{display:flex;flex-direction:column;gap:2px}
-    .claim{
-      background:var(--card);border:1px solid var(--b1);padding:26px 30px;
-      transition:border-color .25s,background .25s;
+    .pat-right{display:flex;flex-direction:column;gap:2px}
+    .pat-stat{
+      background:var(--card2);border:1px solid var(--b1);padding:22px 28px;
     }
-    .claim:hover{border-color:var(--b2);background:var(--card2)}
-    .claim-n{font-family:'Space Mono',monospace;font-size:9px;color:var(--t5);letter-spacing:.1em;margin-bottom:9px}
-    .claim-t{font-size:16px;font-weight:600;color:var(--t2);margin-bottom:8px;line-height:1.28}
-    .claim-d{font-size:14px;color:var(--t4);line-height:1.65}
+    .pat-stat-n{font-family:'Space Mono',monospace;font-size:28px;color:var(--t1);letter-spacing:-.02em;margin-bottom:6px}
+    .pat-stat-l{font-size:13px;color:var(--t5)}
 
     /* ========= PROJECTS ========= */
     .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
@@ -445,7 +438,7 @@
   <div class="pills reveal d4">
     <span class="pill lit"><span class="ldot" style="width:5px;height:5px"></span>&nbsp;Open to Relocation</span>
     <span class="pill">4+ Years PM</span>
-    <span class="pill">2 Patents Filed</span>
+    <span class="pill">2 Patents In Progress</span>
     <span class="pill">Delhi NCR</span>
   </div>
 </div>
@@ -469,14 +462,14 @@
     <p class="reveal d3">
       Right now I lead a team of 6 at Race Engineering — Frontend, Backend, AI/ML, and Product — building
       the infrastructure layer India's AI ecosystem hasn't had access to before. And separately,
-      a personal project with <strong>13 patent claims across 3 applications</strong>, pre-filing.
+      a personal project with <strong>two patent applications pre-filing</strong> — details stay private until examination is complete.
     </p>
   </div>
   <div class="stat-strip reveal d4">
     <div class="stat-item"><div class="stat-n">4+</div><div class="stat-l">Years in Product</div></div>
     <div class="stat-item"><div class="stat-n">5</div><div class="stat-l">Industries</div></div>
     <div class="stat-item"><div class="stat-n">6</div><div class="stat-l">Team led at RACE</div></div>
-    <div class="stat-item"><div class="stat-n">13</div><div class="stat-l">Patent claims, 3 apps</div></div>
+    <div class="stat-item"><div class="stat-n">2</div><div class="stat-l">Patent applications filed</div></div>
   </div>
 </div>
 </section>
@@ -617,38 +610,35 @@
 <section id="patents">
 <div class="inner">
   <div class="slabel reveal">PERSONAL PROJECT — IP <span class="blink"></span></div>
-  <div class="pat-grid reveal d1">
 
-    <div class="pat-main">
-      <div class="pat-badge"><span class="pat-badge-dot"></span>PRE-FILING · INDIA PROVISIONAL + US STRATEGY</div>
-      <div class="pat-h">When Google Maps stops — this picks up.</div>
+  <div class="pat-card reveal d1">
+    <div>
+      <div class="pat-badge"><span class="pat-badge-dot"></span>PRE-FILING · CONFIDENTIAL</div>
+      <div class="pat-h">Two patent applications.<br>Details stay private.</div>
       <div class="pat-body">
-        <p>Google Maps gets a delivery partner to your gate. Past that — through private lanes, past the parking lot, up the right lift, to your actual door — <strong>it's completely blind</strong>. So every delivery partner calls the resident. Every time.</p>
-        <p>I built a platform that eliminates that call forever. Residents draw their path from gate to door once, with their finger on a map. Any delivery partner, guest, or courier who arrives at the gate follows it live. <strong>No call. No confusion.</strong></p>
-        <p>The platform introduces concepts that don't exist in prior art: a portable location identity that any app can call via open API, AR guidance through private spaces recorded once by the resident, and time-conditioned routing that switches entry points automatically.</p>
-      </div>
-      <div class="pat-note">13 patent claims across 3 applications. India provisional first, US in parallel. Nothing disclosed publicly until filing is complete — which is why this stays vague.</div>
-    </div>
-
-    <div class="pat-claims">
-      <div class="claim">
-        <div class="claim-n">APPLICATION 01 — LOCATION IDENTITY</div>
-        <div class="claim-t">@username that navigates you to someone's door</div>
-        <div class="claim-d">A portable handle that resolves across any platform, via open API, to a complete navigation profile. Time rules, drop-off preferences, platform-specific routing. Zomato and Amazon can both call it. They get different gates.</div>
-      </div>
-      <div class="claim">
-        <div class="claim-n">APPLICATION 02 — NAVIGATION EXPERIENCE</div>
-        <div class="claim-t">AR from gate to door, through spaces no map knows</div>
-        <div class="claim-d">Resident records a walkthrough once. Delivery partner's camera shows AR arrows guiding them through private buildings to the actual door. Prior art covers outdoor public spaces. This covers everywhere else.</div>
-      </div>
-      <div class="claim">
-        <div class="claim-n">APPLICATION 03 — PLATFORM & PRIVACY</div>
-        <div class="claim-t">Coordinates that never leave the server</div>
-        <div class="claim-d">Partner's phone receives "turn left in 20m" — never raw GPS. Home coordinates stay server-side. DPDP Act compliant by architecture, not policy. Asymmetric roles enforced at API layer.</div>
+        Working on a personal side project — consumer-facing, solves a problem that exists
+        for hundreds of millions of people daily. <strong>Two applications filed</strong>,
+        covering novel concepts across three claim groups. India provisional first,
+        US strategy running in parallel.<br><br>
+        Nothing goes public until examination is complete. That's the whole point of not saying more.
       </div>
     </div>
-
+    <div class="pat-right">
+      <div class="pat-stat">
+        <div class="pat-stat-n">2</div>
+        <div class="pat-stat-l">Applications filed</div>
+      </div>
+      <div class="pat-stat" style="margin-top:2px">
+        <div class="pat-stat-n">13</div>
+        <div class="pat-stat-l">Claims across 3 groups</div>
+      </div>
+      <div class="pat-stat" style="margin-top:2px">
+        <div class="pat-stat-n" style="font-size:14px;letter-spacing:.1em">IN + US</div>
+        <div class="pat-stat-l">Jurisdictions</div>
+      </div>
+    </div>
   </div>
+
 </div>
 </section>
 
