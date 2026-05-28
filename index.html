@@ -4,1163 +4,1038 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dhruv Garg — Product Manager</title>
-  <meta name="description" content="Product Manager building AI-native tools for motorsport. Previously LegalPay, Zavo, Scalenut, Ministry of Heavy Industry.">
+  <meta name="description" content="Product Manager at Race Engineering — India's GPU cloud marketplace. Building AI products across fintech, SaaS, and deep tech.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
-    :root {
-      --bg: #0a0a0a;
-      --border: rgba(255,255,255,0.08);
-      --border-hover: rgba(255,255,255,0.2);
-      --text: #f0f0f0;
-      --text-muted: #aaa;
-      --text-dim: #666;
-      --card-bg: rgba(255,255,255,0.025);
-      --card-hover: rgba(255,255,255,0.05);
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 17px;
-      line-height: 1.72;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
+    :root{
+      --bg:#080808;
+      --surface:#101010;
+      --surface2:#161616;
+      --border:rgba(255,255,255,0.07);
+      --border2:rgba(255,255,255,0.13);
+      --text:#ebebeb;
+      --text-mid:#aaaaaa;
+      --text-lo:#666666;
+      --text-dim:#3d3d3d;
     }
 
-    /* ======= DOT GRID — breathing fade ======= */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: radial-gradient(circle, rgba(255,255,255,0.09) 1px, transparent 1px);
-      background-size: 26px 26px;
-      pointer-events: none;
-      z-index: 0;
-      animation: dotBreathe 7s ease-in-out infinite;
-    }
-    @keyframes dotBreathe {
-      0%,100% { opacity: 0.55; }
-      50% { opacity: 1; }
+    html{scroll-behavior:smooth}
+    body{
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Space Grotesk',sans-serif;
+      font-size:17px;
+      line-height:1.72;
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
     }
 
-    /* ======= GRAIN overlay ======= */
-    body::after {
-      content: '';
-      position: fixed;
-      inset: -50%;
-      width: 200%;
-      height: 200%;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
-      opacity: 0.028;
-      pointer-events: none;
-      z-index: 0;
-      animation: grainShift 0.18s steps(1) infinite;
+    /* ===== DOT GRID — breathing ===== */
+    body::before{
+      content:'';
+      position:fixed;inset:0;
+      background-image:radial-gradient(circle,rgba(255,255,255,0.08) 1px,transparent 1px);
+      background-size:28px 28px;
+      pointer-events:none;z-index:0;
+      animation:dotBreathe 6s ease-in-out infinite;
     }
-    @keyframes grainShift {
-      0%   { transform: translate(0, 0); }
-      10%  { transform: translate(-3%, -3%); }
-      20%  { transform: translate(3%, 1%); }
-      30%  { transform: translate(-1%, 3%); }
-      40%  { transform: translate(2%, -2%); }
-      50%  { transform: translate(-2%, 2%); }
-      60%  { transform: translate(3%, -1%); }
-      70%  { transform: translate(-3%, 2%); }
-      80%  { transform: translate(1%, -3%); }
-      90%  { transform: translate(-1%, 1%); }
+    @keyframes dotBreathe{0%,100%{opacity:.5}50%{opacity:1}}
+
+    /* ===== GRAIN ===== */
+    body::after{
+      content:'';
+      position:fixed;inset:-60%;
+      width:220%;height:220%;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity:.022;pointer-events:none;z-index:0;
+      animation:grain .14s steps(1) infinite;
+    }
+    @keyframes grain{
+      0%{transform:translate(0,0)}20%{transform:translate(-4%,-3%)}
+      40%{transform:translate(4%,2%)}60%{transform:translate(-2%,4%)}
+      80%{transform:translate(3%,-2%)}
     }
 
-    /* ======= SCROLL REVEAL ======= */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
-                  transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    /* ===== REVEAL ===== */
+    .reveal{
+      opacity:0;transform:translateY(22px);
+      transition:opacity .72s cubic-bezier(.16,1,.3,1),transform .72s cubic-bezier(.16,1,.3,1);
     }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .d1 { transition-delay: 0.07s; }
-    .d2 { transition-delay: 0.16s; }
-    .d3 { transition-delay: 0.27s; }
-    .d4 { transition-delay: 0.40s; }
-    .d5 { transition-delay: 0.54s; }
+    .reveal.vis{opacity:1;transform:translateY(0)}
+    .d1{transition-delay:.07s}.d2{transition-delay:.16s}
+    .d3{transition-delay:.27s}.d4{transition-delay:.40s}.d5{transition-delay:.54s}
 
-    /* ======= NAV ======= */
-    nav {
-      position: fixed;
-      top: 0; width: 100%;
-      z-index: 200;
-      height: 54px;
-      padding: 0 52px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(10,10,10,0.85);
-      backdrop-filter: blur(24px) saturate(120%);
-      -webkit-backdrop-filter: blur(24px) saturate(120%);
-      border-bottom: 1px solid var(--border);
+    /* ===== NAV ===== */
+    nav{
+      position:fixed;top:0;width:100%;z-index:200;
+      height:54px;padding:0 64px;
+      display:flex;align-items:center;justify-content:space-between;
+      background:rgba(8,8,8,.88);
+      backdrop-filter:blur(28px) saturate(130%);
+      -webkit-backdrop-filter:blur(28px) saturate(130%);
+      border-bottom:1px solid var(--border);
     }
-    .nav-logo {
-      font-family: 'Space Mono', monospace;
-      font-size: 11px;
-      color: #555;
-      letter-spacing: 0.15em;
-      text-decoration: none;
-      transition: color 0.25s;
+    .nav-logo{
+      font-family:'Space Mono',monospace;font-size:11px;
+      color:#444;letter-spacing:.16em;text-decoration:none;
+      transition:color .2s;
     }
-    .nav-logo:hover { color: #999; }
-    .nav-links { display: flex; gap: 36px; list-style: none; }
-    .nav-links a {
-      color: #555;
-      text-decoration: none;
-      font-size: 13px;
-      letter-spacing: 0.02em;
-      font-weight: 400;
-      transition: color 0.2s;
-      position: relative;
-      padding-bottom: 2px;
+    .nav-logo:hover{color:#888}
+    .nav-links{display:flex;gap:36px;list-style:none}
+    .nav-links a{
+      color:#555;text-decoration:none;font-size:13px;
+      letter-spacing:.02em;transition:color .18s;position:relative;
     }
-    .nav-links a:hover { color: #ccc; }
-    .nav-links a.active { color: #ddd; }
-    .nav-links a.active::after {
-      content: '';
-      position: absolute;
-      bottom: -4px; left: 50%;
-      transform: translateX(-50%);
-      width: 3px; height: 3px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.4);
+    .nav-links a:hover{color:#ddd}
+    .nav-links a.active{color:#ddd}
+    .nav-links a.active::after{
+      content:'';position:absolute;bottom:-5px;left:50%;
+      transform:translateX(-50%);width:3px;height:3px;
+      border-radius:50%;background:rgba(255,255,255,.35);
     }
 
-    /* ======= GLYPH STRIP ======= */
-    .glyph-strip {
-      position: fixed;
-      right: 0; top: 0; bottom: 0;
-      width: 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      padding: 70px 0;
-      z-index: 50;
-      border-left: 1px solid rgba(255,255,255,0.04);
+    /* ===== GLYPH STRIP ===== */
+    .glyph-strip{
+      position:fixed;right:0;top:0;bottom:0;width:38px;
+      display:flex;flex-direction:column;align-items:center;
+      justify-content:center;gap:5px;padding:64px 0;
+      z-index:50;border-left:1px solid rgba(255,255,255,.04);
     }
-    .gd {
-      width: 4px; height: 4px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.1);
-      animation: glyphWave 3s ease-in-out infinite;
-      flex-shrink: 0;
+    .gd{
+      width:4px;height:4px;border-radius:50%;
+      background:rgba(255,255,255,.1);
+      animation:glyph 3s ease-in-out infinite;flex-shrink:0;
     }
-    @keyframes glyphWave {
-      0%,100% { background: rgba(255,255,255,0.1); transform: scale(1); box-shadow: none; }
-      50% { background: rgba(255,255,255,0.8); transform: scale(1.7); box-shadow: 0 0 8px rgba(255,255,255,0.35); }
+    @keyframes glyph{
+      0%,100%{background:rgba(255,255,255,.1);transform:scale(1);box-shadow:none}
+      50%{background:rgba(255,255,255,.85);transform:scale(1.8);box-shadow:0 0 8px rgba(255,255,255,.4)}
     }
 
-    /* ======= LAYOUT ======= */
-    main {
-      position: relative;
-      z-index: 1;
-      max-width: 880px;
-      margin: 0 auto;
-      padding: 0 52px 140px;
-    }
-    section { padding: 108px 0; }
-    section + section { border-top: 1px solid var(--border); }
+    /* ===== LAYOUT ===== */
+    main{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 80px 140px}
+    section{padding:112px 0}
+    section+section{border-top:1px solid var(--border)}
 
-    /* ======= SECTION LABEL ======= */
-    .section-label {
-      font-family: 'Space Mono', monospace;
-      font-size: 10px;
-      color: #3a3a3a;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 52px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
+    /* ===== SECTION LABEL ===== */
+    .slabel{
+      font-family:'Space Mono',monospace;font-size:10px;
+      color:var(--text-dim);letter-spacing:.22em;text-transform:uppercase;
+      margin-bottom:56px;display:flex;align-items:center;gap:16px;
     }
-    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-    .cursor-blink {
-      display: inline-block; width: 7px; height: 14px;
-      background: rgba(255,255,255,0.18);
-      animation: blink 1s step-end infinite;
-      margin-left: 5px;
+    .slabel::after{content:'';flex:1;height:1px;background:var(--border)}
+    .blink{
+      display:inline-block;width:7px;height:13px;
+      background:rgba(255,255,255,.15);
+      animation:blink .95s step-end infinite;margin-left:4px;
     }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
 
-    /* ======= HERO ======= */
-    #hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 100px 0 80px;
-      border-top: none;
+    /* ===== LIVE DOT ===== */
+    .ldot{
+      width:6px;height:6px;border-radius:50%;
+      background:rgba(255,255,255,.45);
+      animation:lpulse 2s ease-in-out infinite;
+      display:inline-block;flex-shrink:0;
     }
+    @keyframes lpulse{0%,100%{opacity:.2;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
 
-    .hero-eyebrow {
-      font-family: 'Space Mono', monospace;
-      font-size: 10px;
-      color: #3d3d3d;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 32px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    /* ===== HERO ===== */
+    #hero{
+      min-height:100vh;display:flex;flex-direction:column;
+      justify-content:center;padding:100px 0 80px;border-top:none;
     }
-    .live-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.45);
-      animation: livePulse 2s ease-in-out infinite;
-      display: inline-block;
-      flex-shrink: 0;
+    .hero-eye{
+      font-family:'Space Mono',monospace;font-size:10px;
+      color:var(--text-dim);letter-spacing:.2em;text-transform:uppercase;
+      margin-bottom:36px;display:flex;align-items:center;gap:10px;
     }
-    @keyframes livePulse {
-      0%,100%{ opacity: 0.2; transform: scale(0.8); }
-      50%{ opacity: 1; transform: scale(1.2); }
+    .avatar-wrap{position:relative;width:64px;height:64px;margin-bottom:44px}
+    .aring{
+      position:absolute;border-radius:50%;
+      border:1px solid rgba(255,255,255,.08);
+      animation:aring 3.5s ease-in-out infinite;
     }
+    .aring:nth-child(1){inset:-9px}
+    .aring:nth-child(2){inset:-18px;animation-delay:1s;opacity:.6}
+    @keyframes aring{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:.9;transform:scale(1.04)}}
+    .avatar-inner{
+      width:64px;height:64px;border-radius:50%;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.1);
+      display:flex;align-items:center;justify-content:center;overflow:hidden;
+    }
+    .avatar-inner img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+    .avatar-init{font-family:'Space Mono',monospace;font-size:14px;color:#555}
 
-    .avatar-wrap {
-      position: relative;
-      width: 60px; height: 60px;
-      margin-bottom: 40px;
+    h1{
+      font-size:clamp(40px,6vw,66px);font-weight:600;
+      letter-spacing:-.038em;line-height:1.06;
+      margin-bottom:28px;color:var(--text);
     }
-    .avatar-ring {
-      position: absolute;
-      inset: -8px; border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.08);
-      animation: avatarPulse 3.5s ease-in-out infinite;
-    }
-    .avatar-ring:nth-child(2) { inset: -16px; animation-delay: 1s; opacity: 0.6; }
-    @keyframes avatarPulse {
-      0%,100%{ opacity: 0.4; transform: scale(1); }
-      50%{ opacity: 0.9; transform: scale(1.04); }
-    }
-    .avatar-inner {
-      width: 60px; height: 60px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
-      display: flex; align-items: center; justify-content: center;
-      overflow: hidden;
-    }
-    .avatar-inner img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-    .avatar-initials {
-      font-family: 'Space Mono', monospace;
-      font-size: 14px; color: #555; letter-spacing: 0.05em;
-    }
+    h1 em{color:rgba(255,255,255,.28);font-style:normal}
 
-    h1 {
-      font-size: clamp(38px, 6.5vw, 62px);
-      font-weight: 600;
-      letter-spacing: -0.035em;
-      line-height: 1.08;
-      margin-bottom: 26px;
-      color: var(--text);
+    .hero-sub{
+      font-size:20px;color:var(--text-mid);max-width:560px;
+      line-height:1.68;margin-bottom:44px;font-weight:400;
     }
-    h1 em { color: rgba(255,255,255,0.3); font-style: normal; }
+    .hero-sub strong{color:#d8d8d8;font-weight:500}
+    .hero-sub a{color:#d8d8d8;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.18);transition:border-color .2s}
+    .hero-sub a:hover{border-color:rgba(255,255,255,.5)}
 
-    .hero-sub {
-      font-size: 19px;
-      color: #888;
-      max-width: 540px;
-      line-height: 1.7;
-      margin-bottom: 44px;
-      font-weight: 400;
+    .pills{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+    .pill{
+      font-family:'Space Mono',monospace;font-size:10px;
+      color:#4a4a4a;padding:5px 13px;
+      border:1px solid rgba(255,255,255,.06);border-radius:2px;
+      letter-spacing:.07em;text-transform:uppercase;
     }
-    .hero-sub strong { color: #c8c8c8; font-weight: 500; }
-
-    .hero-pills {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 16px;
-    }
-    .pill {
-      font-family: 'Space Mono', monospace;
-      font-size: 10px;
-      color: #444;
-      padding: 5px 13px;
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 2px;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-    }
-    .pill.lit { color: #999; border-color: rgba(255,255,255,0.14); }
+    .pill.lit{color:#aaa;border-color:rgba(255,255,255,.13)}
 
     /* corner accents */
-    .ca { position: absolute; top: 0; left: 0; width: 14px; height: 14px; border-top: 1px solid rgba(255,255,255,0.16); border-left: 1px solid rgba(255,255,255,0.16); pointer-events: none; }
-    .ca-br { position: absolute; bottom: 0; right: 0; width: 14px; height: 14px; border-bottom: 1px solid rgba(255,255,255,0.16); border-right: 1px solid rgba(255,255,255,0.16); pointer-events: none; }
+    .ca{position:absolute;top:0;left:0;width:14px;height:14px;border-top:1px solid rgba(255,255,255,.14);border-left:1px solid rgba(255,255,255,.14);pointer-events:none}
+    .cabr{position:absolute;bottom:0;right:0;width:14px;height:14px;border-bottom:1px solid rgba(255,255,255,.14);border-right:1px solid rgba(255,255,255,.14);pointer-events:none}
 
-    /* ======= ABOUT ======= */
-    .about-body {
-      font-size: 18px;
-      color: #999;
-      line-height: 1.82;
-      max-width: 740px;
-    }
-    .about-body p { margin-bottom: 22px; }
-    .about-body p:last-child { margin-bottom: 0; }
-    .about-body strong { color: #ddd; font-weight: 500; }
+    /* ===== ABOUT ===== */
+    .about-body{font-size:19px;color:#b0b0b0;line-height:1.84;max-width:780px}
+    .about-body p{margin-bottom:24px}
+    .about-body p:last-child{margin-bottom:0}
+    .about-body strong{color:#e8e8e8;font-weight:500}
 
-    .stat-strip {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      margin-top: 56px;
+    .stat-strip{
+      display:grid;grid-template-columns:repeat(4,1fr);
+      gap:1px;background:var(--border);border:1px solid var(--border);
+      margin-top:60px;
     }
-    .stat-item {
-      background: var(--bg);
-      padding: 30px 26px;
+    .stat-item{background:var(--bg);padding:32px 28px}
+    .stat-n{
+      font-family:'Space Mono',monospace;font-size:32px;
+      color:var(--text);letter-spacing:-.02em;margin-bottom:8px;line-height:1;
     }
-    .stat-num {
-      font-family: 'Space Mono', monospace;
-      font-size: 30px;
-      color: var(--text);
-      letter-spacing: -0.02em;
-      margin-bottom: 7px;
-      line-height: 1;
-    }
-    .stat-label { font-size: 13px; color: #555; line-height: 1.45; }
+    .stat-l{font-size:13px;color:var(--text-lo);line-height:1.45}
 
-    /* ======= WORK ======= */
-    .work-list { display: flex; flex-direction: column; gap: 2px; }
+    /* ===== WORK ===== */
+    .work-list{display:flex;flex-direction:column;gap:2px}
+    .wcard{
+      position:relative;
+      background:var(--surface);border:1px solid var(--border);
+      padding:38px 44px;
+      transition:border-color .3s,background .3s;
+    }
+    .wcard:hover{border-color:var(--border2);background:var(--surface2)}
+    .wcard.feat{border-color:rgba(255,255,255,.1);background:rgba(255,255,255,.03)}
+    .wcard.feat:hover{border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.055)}
 
-    .work-card {
-      position: relative;
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      padding: 36px 40px;
-      transition: border-color 0.3s ease, background 0.3s ease;
+    .whead{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-bottom:22px}
+    .wrole{font-size:18px;font-weight:600;color:var(--text);margin-bottom:5px}
+    .wcomprow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .wcomp{font-size:14px;color:#d0d0d0;font-weight:500}
+    .wurl{
+      font-family:'Space Mono',monospace;font-size:9px;color:#555;
+      text-decoration:none;padding:2px 9px;
+      border:1px solid rgba(255,255,255,.07);border-radius:2px;
+      transition:color .2s,border-color .2s;
     }
-    .work-card:hover { border-color: var(--border-hover); background: var(--card-hover); }
-    .work-card.featured {
-      border-color: rgba(255,255,255,0.11);
-      background: rgba(255,255,255,0.035);
-    }
-    .work-card.featured:hover { border-color: rgba(255,255,255,0.22); background: rgba(255,255,255,0.06); }
+    .wurl:hover{color:#aaa;border-color:rgba(255,255,255,.18)}
+    .wperiod{font-family:'Space Mono',monospace;font-size:10px;color:var(--text-dim);white-space:nowrap;flex-shrink:0}
 
-    .work-header {
-      display: flex; align-items: flex-start;
-      justify-content: space-between; gap: 20px;
-      margin-bottom: 22px;
-    }
-    .work-role {
-      font-size: 17px; font-weight: 600;
-      color: var(--text); margin-bottom: 5px;
-    }
-    .work-company-row {
-      display: flex; align-items: center;
-      gap: 10px; flex-wrap: wrap;
-    }
-    .work-company { font-size: 14px; color: #bbb; font-weight: 500; }
-    .work-url {
-      font-family: 'Space Mono', monospace;
-      font-size: 9px; color: #444;
-      text-decoration: none; padding: 2px 8px;
-      border: 1px solid rgba(255,255,255,0.07); border-radius: 2px;
-      transition: color 0.2s, border-color 0.2s;
-    }
-    .work-url:hover { color: #999; border-color: rgba(255,255,255,0.16); }
-    .work-period {
-      font-family: 'Space Mono', monospace;
-      font-size: 10px; color: #3a3a3a; white-space: nowrap; flex-shrink: 0;
+    .wtags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:28px}
+    .tag{
+      font-family:'Space Mono',monospace;font-size:9px;color:#505050;
+      padding:3px 9px;border:1px solid rgba(255,255,255,.055);border-radius:2px;letter-spacing:.06em;
     }
 
-    .work-tags {
-      display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 26px;
-    }
-    .tag {
-      font-family: 'Space Mono', monospace;
-      font-size: 9px; color: #484848; padding: 3px 9px;
-      border: 1px solid rgba(255,255,255,0.055); border-radius: 2px; letter-spacing: 0.06em;
-    }
+    .wcols{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+    .wcols.full{grid-template-columns:1fr}
+    .wbl{font-family:'Space Mono',monospace;font-size:9px;color:var(--text-dim);letter-spacing:.14em;text-transform:uppercase;margin-bottom:9px}
+    .wbt{font-size:15px;color:#aaa;line-height:1.74}
+    .wbt strong{color:#d8d8d8;font-weight:500}
 
-    .work-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-    .work-cols.full { grid-template-columns: 1fr; }
-    .work-block-label {
-      font-family: 'Space Mono', monospace; font-size: 9px;
-      color: #3a3a3a; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 9px;
+    .wcallout{
+      margin-top:24px;padding:16px 20px;
+      background:rgba(255,255,255,.02);
+      border-left:2px solid rgba(255,255,255,.1);
+      font-size:15px;color:#888;line-height:1.65;
     }
-    .work-block-text { font-size: 15px; color: #888; line-height: 1.72; }
-    .work-block-text strong { color: #c0c0c0; font-weight: 500; }
+    .wcallout strong{color:#c0c0c0}
 
-    .work-callout {
-      margin-top: 24px; padding: 16px 18px;
-      background: rgba(255,255,255,0.025);
-      border-left: 2px solid rgba(255,255,255,0.1);
-      font-size: 14px; color: #777; line-height: 1.65;
+    /* ===== PATENTS (standalone personal) ===== */
+    #patents{background:var(--bg)}
+    .patent-wrap{
+      display:grid;grid-template-columns:1fr 1fr;gap:2px;
     }
-    .work-callout strong { color: #b0b0b0; }
+    .patent-main{
+      position:relative;
+      background:rgba(255,255,255,.025);
+      border:1px solid rgba(255,255,255,.09);
+      padding:40px 44px;
+      overflow:hidden;
+    }
+    .patent-main::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:1px;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);
+    }
+    .patent-tag{
+      display:inline-flex;align-items:center;gap:7px;
+      font-family:'Space Mono',monospace;font-size:9px;
+      color:#555;letter-spacing:.14em;text-transform:uppercase;
+      margin-bottom:20px;
+    }
+    .patent-tag-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.3);animation:lpulse 2s ease-in-out infinite}
+    .patent-h{font-size:22px;font-weight:600;color:#e8e8e8;letter-spacing:-.02em;margin-bottom:16px;line-height:1.2}
+    .patent-body{font-size:16px;color:#999;line-height:1.78}
+    .patent-body strong{color:#d0d0d0;font-weight:500}
+    .patent-body p{margin-bottom:16px}
+    .patent-body p:last-child{margin-bottom:0}
 
-    /* patent strip */
-    .patent-strip {
-      display: flex; align-items: center; gap: 16px;
-      margin-top: 20px; padding: 14px 18px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.02);
+    .patent-claims{
+      display:flex;flex-direction:column;gap:2px;
     }
-    .patent-strip-icon {
-      font-family: 'Space Mono', monospace;
-      font-size: 9px; color: #444; letter-spacing: 0.1em; flex-shrink: 0;
+    .claim-card{
+      background:var(--surface);border:1px solid var(--border);
+      padding:24px 28px;
+      transition:border-color .25s,background .25s;
     }
-    .patent-strip-text { font-size: 14px; color: #777; line-height: 1.55; }
-    .patent-strip-text strong { color: #aaa; }
+    .claim-card:hover{border-color:var(--border2);background:var(--surface2)}
+    .claim-num{font-family:'Space Mono',monospace;font-size:9px;color:var(--text-dim);letter-spacing:.1em;margin-bottom:8px}
+    .claim-title{font-size:15px;font-weight:600;color:#d8d8d8;margin-bottom:7px;line-height:1.3}
+    .claim-desc{font-size:13px;color:#888;line-height:1.65}
 
-    /* ======= PROJECTS ======= */
-    .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+    /* ===== PROJECTS ===== */
+    .proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+    .pcard{
+      position:relative;background:var(--surface);border:1px solid var(--border);
+      padding:32px 34px;transition:border-color .3s,background .3s;
+    }
+    .pcard:hover{border-color:var(--border2);background:var(--surface2)}
+    .pcard.wide{grid-column:1/-1}
+    .ptype{font-family:'Space Mono',monospace;font-size:9px;color:var(--text-dim);letter-spacing:.14em;text-transform:uppercase;margin-bottom:11px}
+    .ptitle{font-size:17px;font-weight:600;color:#e2e2e2;margin-bottom:12px;line-height:1.28}
+    .pdesc{font-size:14px;color:#888;line-height:1.7}
+    .pdesc strong{color:#c0c0c0;font-weight:500}
+    .plink{
+      display:inline-flex;align-items:center;gap:5px;margin-top:14px;
+      font-family:'Space Mono',monospace;font-size:9px;color:#555;
+      text-decoration:none;letter-spacing:.06em;transition:color .2s;
+    }
+    .plink:hover{color:#aaa}
 
-    .project-card {
-      position: relative;
-      background: var(--card-bg); border: 1px solid var(--border);
-      padding: 30px 30px;
-      transition: border-color 0.3s, background 0.3s;
+    /* ===== ARTICLES ===== */
+    .art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .acard{
+      position:relative;background:var(--surface);border:1px solid var(--border);
+      padding:28px 30px;text-decoration:none;display:block;
+      transition:border-color .3s,background .3s;
     }
-    .project-card:hover { border-color: var(--border-hover); background: var(--card-hover); }
-    .project-card.wide { grid-column: 1 / -1; }
+    .acard:hover{border-color:var(--border2);background:var(--surface2)}
+    .atopic{font-family:'Space Mono',monospace;font-size:9px;color:var(--text-dim);letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+    .atitle{font-size:15px;font-weight:600;color:#ddd;margin-bottom:10px;line-height:1.32}
+    .adesc{font-size:13px;color:#888;line-height:1.65}
+    .ameta{margin-top:14px;font-family:'Space Mono',monospace;font-size:9px;color:#3d3d3d;letter-spacing:.06em}
+    .art-coming{
+      grid-column:1/-1;background:transparent;border:1px dashed rgba(255,255,255,.06);
+      padding:28px 30px;text-align:center;
+    }
+    .art-coming-text{font-family:'Space Mono',monospace;font-size:10px;color:var(--text-dim);letter-spacing:.14em}
 
-    .project-type {
-      font-family: 'Space Mono', monospace; font-size: 9px;
-      color: #3a3a3a; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 11px;
+    /* ===== SKILLS ===== */
+    .skill-rows{display:flex;flex-direction:column;gap:0}
+    .skill-row{
+      display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:start;
+      padding:22px 0;border-bottom:1px solid var(--border);
     }
-    .project-title { font-size: 16px; font-weight: 600; color: #e0e0e0; margin-bottom: 12px; line-height: 1.3; }
-    .project-desc { font-size: 14px; color: #777; line-height: 1.7; }
-    .project-desc strong { color: #aaa; font-weight: 500; }
+    .skill-row:first-child{border-top:1px solid var(--border)}
+    .skill-rlabel{font-family:'Space Mono',monospace;font-size:9px;color:var(--text-dim);letter-spacing:.14em;text-transform:uppercase;padding-top:6px}
+    .stags{display:flex;flex-wrap:wrap;gap:8px}
+    .stag{font-size:14px;color:#999;padding:6px 14px;border:1px solid rgba(255,255,255,.07);border-radius:2px}
+    .stag.p{color:#d8d8d8;border-color:rgba(255,255,255,.13)}
 
-    .project-link {
-      display: inline-flex; align-items: center; gap: 5px;
-      margin-top: 14px;
-      font-family: 'Space Mono', monospace; font-size: 9px;
-      color: #444; text-decoration: none; letter-spacing: 0.06em;
-      transition: color 0.2s;
-    }
-    .project-link:hover { color: #888; }
+    /* ===== EDUCATION ===== */
+    .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+    .ecard{background:var(--surface);border:1px solid var(--border);padding:30px 32px}
+    .elabel{font-family:'Space Mono',monospace;font-size:9px;color:var(--text-dim);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+    .etitle{font-size:16px;font-weight:600;color:#e0e0e0;margin-bottom:6px}
+    .esub{font-size:13px;color:#666;line-height:1.55}
+    .esub a{color:#666;text-decoration:none;transition:color .2s}
+    .esub a:hover{color:#aaa}
 
-    /* ======= SKILLS ======= */
-    .skill-section { display: flex; flex-direction: column; gap: 40px; }
-    .skill-group { display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: start; }
-    .skill-group-label {
-      font-family: 'Space Mono', monospace; font-size: 10px;
-      color: #3a3a3a; letter-spacing: 0.12em; text-transform: uppercase;
-      padding-top: 6px;
-    }
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-    .skill-tag {
-      font-size: 14px; color: #888;
-      padding: 6px 14px;
-      border: 1px solid rgba(255,255,255,0.07); border-radius: 2px;
-    }
-    .skill-tag.primary { color: #ccc; border-color: rgba(255,255,255,0.13); }
+    .rec-card{background:var(--surface);border:1px solid var(--border);padding:30px 32px}
+    .rec-result{margin-top:12px;font-family:'Space Mono',monospace;font-size:10px;color:#999;letter-spacing:.06em}
 
-    /* ======= EDUCATION / RECOGNITION ======= */
-    .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-    .edu-card {
-      background: var(--card-bg); border: 1px solid var(--border);
-      padding: 28px 30px;
+    /* ===== CONTACT ===== */
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;align-items:stretch}
+    .contact-left{
+      background:var(--surface);border:1px solid var(--border);
+      padding:48px 44px;display:flex;flex-direction:column;justify-content:space-between;
     }
-    .edu-label {
-      font-family: 'Space Mono', monospace; font-size: 9px;
-      color: #3a3a3a; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 11px;
+    .contact-h{font-size:34px;font-weight:600;letter-spacing:-.03em;color:var(--text);margin-bottom:12px;line-height:1.1}
+    .contact-sub{font-size:15px;color:var(--text-lo);line-height:1.65;max-width:320px}
+    .contact-right{display:flex;flex-direction:column;gap:2px}
+    .crow{
+      display:flex;align-items:center;
+      background:var(--surface);border:1px solid var(--border);
+      text-decoration:none;transition:border-color .25s,background .25s;flex:1;
     }
-    .edu-title { font-size: 15px; font-weight: 600; color: #ddd; margin-bottom: 5px; }
-    .edu-sub { font-size: 13px; color: #666; line-height: 1.55; }
-    .edu-sub a { color: #666; text-decoration: none; transition: color 0.2s; }
-    .edu-sub a:hover { color: #aaa; }
+    .crow:hover{border-color:var(--border2);background:var(--surface2)}
+    .crow-l{
+      font-family:'Space Mono',monospace;font-size:9px;
+      color:var(--text-dim);letter-spacing:.14em;text-transform:uppercase;
+      padding:20px 22px;border-right:1px solid var(--border);width:88px;flex-shrink:0;
+    }
+    .crow-v{font-size:14px;color:#888;padding:20px 22px;flex:1;transition:color .25s}
+    .crow:hover .crow-v{color:#e0e0e0}
+    .crow-arr{font-size:13px;color:var(--text-dim);padding:20px 22px;transition:color .25s}
+    .crow:hover .crow-arr{color:#888}
 
-    /* patent card */
-    .patent-card {
-      background: rgba(255,255,255,0.025);
-      border: 1px solid rgba(255,255,255,0.09);
-      padding: 28px 30px;
-      position: relative; overflow: hidden;
-    }
-    .patent-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
-    }
-    .patent-status-row {
-      display: flex; align-items: center; gap: 8px; margin-bottom: 12px;
-    }
-    .patent-status-dot { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.35); animation: livePulse 2s ease-in-out infinite; }
-    .patent-status-label { font-family: 'Space Mono', monospace; font-size: 9px; color: #555; letter-spacing: 0.12em; text-transform: uppercase; }
-    .patent-card-title { font-size: 15px; font-weight: 600; color: #ddd; margin-bottom: 10px; }
-    .patent-card-body { font-size: 14px; color: #777; line-height: 1.7; }
-    .patent-card-body strong { color: #aaa; }
+    /* ===== FOOTER ===== */
+    footer{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 80px 56px}
+    .foot-bar{padding-top:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+    .foot-t{font-family:'Space Mono',monospace;font-size:9px;color:#2a2a2a;letter-spacing:.1em}
 
-    /* recognition */
-    .recognition-card {
-      background: var(--card-bg); border: 1px solid var(--border);
-      padding: 28px 30px;
-    }
-    .rec-label { font-family: 'Space Mono', monospace; font-size: 9px; color: #3a3a3a; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 11px; }
-    .rec-title { font-size: 15px; font-weight: 600; color: #ddd; margin-bottom: 8px; }
-    .rec-body { font-size: 13px; color: #666; line-height: 1.65; }
-    .rec-result { margin-top: 12px; font-family: 'Space Mono', monospace; font-size: 10px; color: #888; letter-spacing: 0.06em; }
-
-    /* ======= CONTACT ======= */
-    .contact-wrap {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;
-    }
-    .contact-heading { font-size: 32px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin-bottom: 14px; }
-    .contact-sub { font-size: 16px; color: #666; line-height: 1.65; max-width: 340px; }
-
-    .contact-links { display: flex; flex-direction: column; gap: 2px; }
-    .contact-row {
-      display: flex; align-items: center; gap: 0;
-      border: 1px solid var(--border); background: var(--card-bg);
-      transition: border-color 0.25s, background 0.25s;
-      text-decoration: none;
-    }
-    .contact-row:hover { border-color: var(--border-hover); background: var(--card-hover); }
-    .contact-row-label {
-      font-family: 'Space Mono', monospace; font-size: 9px;
-      color: #3a3a3a; letter-spacing: 0.12em; text-transform: uppercase;
-      padding: 16px 18px;
-      border-right: 1px solid var(--border);
-      width: 80px; flex-shrink: 0;
-    }
-    .contact-row-val { font-size: 14px; color: #777; padding: 16px 18px; flex: 1; transition: color 0.25s; }
-    .contact-row:hover .contact-row-val { color: #ccc; }
-    .contact-row-arrow { font-size: 12px; color: #3a3a3a; padding: 16px 18px; transition: color 0.25s; }
-    .contact-row:hover .contact-row-arrow { color: #888; }
-
-    /* ======= FOOTER ======= */
-    footer {
-      position: relative; z-index: 1;
-      max-width: 880px; margin: 0 auto; padding: 0 52px 56px;
-    }
-    .footer-bar {
-      padding-top: 24px; border-top: 1px solid var(--border);
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .footer-text { font-family: 'Space Mono', monospace; font-size: 9px; color: #2d2d2d; letter-spacing: 0.1em; }
-
-    /* ======= RESPONSIVE ======= */
-    @media (max-width: 720px) {
-      nav { padding: 0 20px; }
-      main { padding: 0 20px 80px; }
-      footer { padding: 0 20px 40px; }
-      .glyph-strip { display: none; }
-      h1 { font-size: 34px; }
-      .hero-sub { font-size: 17px; }
-      .about-body { font-size: 16px; }
-      .stat-strip { grid-template-columns: 1fr 1fr; }
-      .work-cols { grid-template-columns: 1fr; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .skill-group { grid-template-columns: 1fr; gap: 10px; }
-      .edu-grid { grid-template-columns: 1fr; }
-      .contact-wrap { grid-template-columns: 1fr; gap: 32px; }
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:800px){
+      nav{padding:0 20px}
+      main{padding:0 24px 80px}
+      footer{padding:0 24px 40px}
+      .glyph-strip{display:none}
+      h1{font-size:36px}
+      .hero-sub{font-size:17px}
+      .stat-strip{grid-template-columns:1fr 1fr}
+      .wcols{grid-template-columns:1fr}
+      .patent-wrap{grid-template-columns:1fr}
+      .proj-grid{grid-template-columns:1fr}
+      .art-grid{grid-template-columns:1fr}
+      .skill-row{grid-template-columns:1fr;gap:10px}
+      .edu-grid{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="#" class="nav-logo">DG ·</a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<nav>
+  <a href="#" class="nav-logo">DG ·</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#patents">Patents</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#articles">Writing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-  <!-- GLYPH STRIP -->
-  <div class="glyph-strip" id="glyphStrip"></div>
+<div class="glyph-strip" id="gs"></div>
 
-  <main>
+<main>
 
-    <!-- ===== HERO ===== -->
-    <section id="hero">
-      <div class="hero-eyebrow reveal">
-        <span class="live-dot"></span>
-        ACTIVE — RACE ENGINEERING · DELHI NCR
-      </div>
-
-      <div class="avatar-wrap reveal d1">
-        <div class="avatar-ring"></div>
-        <div class="avatar-ring"></div>
-        <div class="avatar-inner">
-          <img src="photo.jpg" alt="Dhruv Garg"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <span class="avatar-initials" style="display:none">DG</span>
-        </div>
-      </div>
-
-      <h1 class="reveal d2">Dhruv Garg<br><em>Product Manager</em></h1>
-
-      <p class="hero-sub reveal d3">
-        Building <strong>AI-native intelligence tools for motorsport</strong> at
-        <a href="https://raceengineering.ai" target="_blank" style="color:#c8c8c8;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.15);">Race Engineering</a>.
-        Previously built payment products, led fintech compliance, and shipped features
-        across SaaS, government, and fintech.
-      </p>
-
-      <div class="hero-pills reveal d4">
-        <span class="pill lit"><span class="live-dot" style="width:5px;height:5px;"></span> &nbsp;Open to Relocation</span>
-        <span class="pill">4+ Years PM</span>
-        <span class="pill">2 Patents Filed</span>
-        <span class="pill">Delhi NCR</span>
-      </div>
-    </section>
-
-    <!-- ===== ABOUT ===== -->
-    <section id="about">
-      <div class="section-label reveal">ABOUT <span class="cursor-blink"></span></div>
-
-      <div class="about-body">
-        <p class="reveal d1">
-          I'm a product manager who came up through <strong>data analytics</strong> — which means I think in systems,
-          care about instrumentation, and don't trust a metric I can't trace back to a source. My approach to product
-          is rooted in domain depth: I don't parachute into a market and guess. I work to understand the actual problem
-          before I reach for a solution.
-        </p>
-        <p class="reveal d2">
-          My career has cut across <strong>fintech, content intelligence, government policy, and now AI + motorsport</strong> —
-          industries that seem unrelated but share a thread: high-stakes decisions, fragmented data, and
-          stakeholders who don't always agree on the problem. That's the PM work I find genuinely interesting.
-        </p>
-        <p class="reveal d3">
-          Right now I lead a cross-functional team of 6 at Race Engineering — building the intelligence layer
-          that motorsport teams don't have yet. <strong>Two patents are under process.</strong>
-          The work is new, and that's why I'm doing it.
-        </p>
-      </div>
-
-      <div class="stat-strip reveal d4">
-        <div class="stat-item">
-          <div class="stat-num">4+</div>
-          <div class="stat-label">Years in Product</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">5</div>
-          <div class="stat-label">Industries covered</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">6</div>
-          <div class="stat-label">Person team led</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">2</div>
-          <div class="stat-label">Patents under process</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== WORK ===== -->
-    <section id="work">
-      <div class="section-label reveal">EXPERIENCE <span class="cursor-blink"></span></div>
-      <div class="work-list">
-
-        <!-- RACE ENGINEERING -->
-        <div class="work-card featured reveal d1">
-          <div class="ca"></div><div class="ca-br"></div>
-          <div class="work-header">
-            <div>
-              <div class="work-role">Product Manager</div>
-              <div class="work-company-row">
-                <span class="work-company">Race Engineering</span>
-                <a href="https://raceengineering.ai" class="work-url" target="_blank">raceengineering.ai ↗</a>
-                <span class="live-dot" style="width:5px;height:5px;"></span>
-              </div>
-            </div>
-            <span class="work-period">2024 — PRESENT</span>
-          </div>
-
-          <div class="work-tags">
-            <span class="tag">AI / ML PRODUCTS</span>
-            <span class="tag">MOTORSPORT TECH</span>
-            <span class="tag">TEAM OF 6</span>
-            <span class="tag">IP FILING</span>
-            <span class="tag">PLATFORM</span>
-          </div>
-
-          <div class="work-cols">
-            <div>
-              <div class="work-block-label">THE PROBLEM</div>
-              <div class="work-block-text">
-                Motorsport runs on data — telemetry, lap deltas, strategy windows, tyre deg — but
-                <strong>the intelligence layer doesn't exist</strong>. Teams make critical, time-pressured decisions
-                from fragmented sources. The tooling is decades old or non-existent.
-              </div>
-            </div>
-            <div>
-              <div class="work-block-label">WHAT I'M BUILDING</div>
-              <div class="work-block-text">
-                An <strong>AI-native intelligence platform</strong> for the motorsport ecosystem. I lead a team of 6
-                across Frontend, Backend, AI/ML, and Product — from architecture decisions through to deployment.
-                Roadmap owner, stakeholder interface, and the person responsible for the product making sense.
-              </div>
-            </div>
-          </div>
-
-          <div class="work-callout">
-            Two patents under process — IP filed directly from this work. The filings address novel methods in
-            <strong>real-time decision intelligence within competitive motorsport environments</strong>.
-            Not public yet, but they represent the core of what we're building and why it's defensible.
-          </div>
-
-          <div class="patent-strip">
-            <div class="patent-strip-icon">[ IP ]</div>
-            <div class="patent-strip-text">
-              <strong>2 patents under examination</strong> — covering novel ML applications in real-time motorsport
-              decision systems. Filed 2024–25. Currently under review.
-            </div>
-          </div>
-        </div>
-
-        <!-- ZAVO -->
-        <div class="work-card reveal d2">
-          <div class="work-header">
-            <div>
-              <div class="work-role">Associate Manager — Product</div>
-              <div class="work-company-row">
-                <span class="work-company">Zavo</span>
-                <a href="https://thezavo.com" class="work-url" target="_blank">thezavo.com ↗</a>
-              </div>
-            </div>
-            <span class="work-period">2023 — 2024</span>
-          </div>
-
-          <div class="work-tags">
-            <span class="tag">PAYMENT PRODUCTS</span>
-            <span class="tag">PINE LABS</span>
-            <span class="tag">GIFT CARDS</span>
-            <span class="tag">OPS SETUP</span>
-          </div>
-
-          <div class="work-cols">
-            <div>
-              <div class="work-block-label">THE PROBLEM</div>
-              <div class="work-block-text">
-                Zavo needed a <strong>digital gift card product live</strong> — from zero — with Pine Labs as the payments backbone.
-                No spec, no ops workflow, no integration playbook. Just a target and a deadline.
-              </div>
-            </div>
-            <div>
-              <div class="work-block-label">WHAT I DID</div>
-              <div class="work-block-text">
-                Owned end-to-end product setup for <strong>Pine Labs Gift Card integration</strong>: product spec, partner coordination,
-                user flow design, ops runbook, and go-live sign-off. First live payment product I took from
-                blank doc to working transaction pipeline.
-              </div>
-            </div>
-          </div>
-
-          <div class="work-callout">
-            Gift card issuance live. End-to-end transaction pipeline operational. The satisfaction of a payment working for the first time is underrated.
-          </div>
-        </div>
-
-        <!-- LEGALPAY -->
-        <div class="work-card reveal d2">
-          <div class="work-header">
-            <div>
-              <div class="work-role">Product</div>
-              <div class="work-company-row">
-                <span class="work-company">LegalPay Technology</span>
-                <a href="https://legalpay.in" class="work-url" target="_blank">legalpay.in ↗</a>
-              </div>
-            </div>
-            <span class="work-period">2022 — 2023</span>
-          </div>
-
-          <div class="work-tags">
-            <span class="tag">FINTECH</span>
-            <span class="tag">LITIGATION FINANCE</span>
-            <span class="tag">CICRA AUDIT</span>
-            <span class="tag">COMPLIANCE</span>
-          </div>
-
-          <div class="work-cols">
-            <div>
-              <div class="work-block-label">THE PROBLEM</div>
-              <div class="work-block-text">
-                CICRA — Cyber Insurance Claims Readiness Assessment — is one of the more demanding
-                cybersecurity compliance frameworks. <strong>Aligning a live fintech company across product,
-                tech, and ops for an external audit</strong> is not a coordination task you can improvise.
-              </div>
-            </div>
-            <div>
-              <div class="work-block-label">WHAT I DID</div>
-              <div class="work-block-text">
-                Led internal audit coordination end-to-end — mapping controls, liaising with Panacea InfoSec
-                (the auditing firm), and making sure every section had a clear owner and a clean paper trail
-                before the external team walked in.
-              </div>
-            </div>
-          </div>
-
-          <div class="work-callout">
-            CICRA audit completed: <strong>all controls cleared across Sections 19, 20, and 22. Zero critical findings.</strong> Result: SATISFACTORY ✓
-          </div>
-        </div>
-
-        <!-- SCALENUT -->
-        <div class="work-card reveal d3">
-          <div class="work-header">
-            <div>
-              <div class="work-role">Product</div>
-              <div class="work-company-row">
-                <span class="work-company">Scalenut</span>
-                <a href="https://www.scalenut.com" class="work-url" target="_blank">scalenut.com ↗</a>
-              </div>
-            </div>
-            <span class="work-period">2022</span>
-          </div>
-          <div class="work-tags">
-            <span class="tag">AI SAAS</span>
-            <span class="tag">CONTENT INTELLIGENCE</span>
-            <span class="tag">SEO TOOLING</span>
-          </div>
-          <div class="work-cols full">
-            <div>
-              <div class="work-block-label">CONTEXT</div>
-              <div class="work-block-text">
-                Scalenut is an AI-powered content intelligence platform. Product work here was on
-                <strong>SEO tooling and content workflow features</strong> — operating in a fast-moving AI SaaS environment
-                where the pace of shipping is the baseline, not the goal.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- MINISTRY -->
-        <div class="work-card reveal d3">
-          <div class="work-header">
-            <div>
-              <div class="work-role">Project Trainee</div>
-              <div class="work-company-row">
-                <span class="work-company">Ministry of Heavy Industries</span>
-                <a href="https://heavyindustries.gov.in" class="work-url" target="_blank">heavyindustries.gov.in ↗</a>
-              </div>
-            </div>
-            <span class="work-period">2021</span>
-          </div>
-          <div class="work-tags">
-            <span class="tag">GOVERNMENT</span>
-            <span class="tag">POLICY</span>
-            <span class="tag">NATIONAL SCALE</span>
-          </div>
-          <div class="work-cols full">
-            <div>
-              <div class="work-block-label">CONTEXT</div>
-              <div class="work-block-text">
-                Exposure to <strong>policy documentation and project tracking at government scale</strong>.
-                The structured rigour of how decisions get made and documented inside a central ministry is
-                a useful counterweight to startup pace — both have shaped how I approach accountability in product work.
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ===== PROJECTS ===== -->
-    <section id="projects">
-      <div class="section-label reveal">PROJECTS <span class="cursor-blink"></span></div>
-
-      <div class="projects-grid">
-
-        <div class="project-card reveal d1">
-          <div class="ca"></div>
-          <div class="project-type">PM · PAYMENTS</div>
-          <div class="project-title">Pine Labs Gift Card Integration — Zavo</div>
-          <div class="project-desc">
-            Full product ownership of a <strong>digital gift card product on Pine Labs infrastructure</strong>.
-            Spec → integration → ops workflow → go-live. The first payment pipeline I owned end-to-end —
-            from blank doc to working transaction.
-          </div>
-          <a href="https://thezavo.com" class="project-link" target="_blank">Zavo ↗</a>
-        </div>
-
-        <div class="project-card reveal d1">
-          <div class="project-type">COMPLIANCE · FINTECH</div>
-          <div class="project-title">CICRA Cybersecurity Audit — LegalPay</div>
-          <div class="project-desc">
-            Led internal coordination of a <strong>CICRA audit by Panacea InfoSec</strong>
-            at LegalPay Technology. All controls across Sections 19, 20, and 22 cleared.
-            Zero critical findings. The kind of result you only get with thorough prep.
-          </div>
-          <a href="https://legalpay.in" class="project-link" target="_blank">LegalPay ↗</a>
-        </div>
-
-        <div class="project-card reveal d2">
-          <div class="project-type">PM THINKING · EDTECH</div>
-          <div class="project-title">AdmitKard — APM Assessment</div>
-          <div class="project-desc">
-            Structured APM case study for <strong>AdmitKard</strong> — a study abroad admissions platform.
-            Demonstrates how I frame user problems, prioritise, and design features in a consumer education context
-            where the emotional stakes are high.
-          </div>
-        </div>
-
-        <div class="project-card reveal d2">
-          <div class="project-type">DATA ANALYSIS · SPORTS</div>
-          <div class="project-title">IPL Data Analysis</div>
-          <div class="project-desc">
-            Statistical analysis of <strong>IPL match data</strong> — performance patterns, team metrics,
-            outcome modelling. The data instincts built here translate directly to how I think about
-            product instrumentation and success metrics.
-          </div>
-        </div>
-
-        <div class="project-card reveal d3">
-          <div class="project-type">DATA ANALYSIS · RETAIL</div>
-          <div class="project-title">Retail Price Optimisation</div>
-          <div class="project-desc">
-            Academic project on <strong>pricing strategy and demand elasticity models</strong> in retail.
-            Foundation for thinking about monetisation, pricing mechanics, and
-            how small changes in price architecture affect user behaviour.
-          </div>
-        </div>
-
-        <div class="project-card reveal d3">
-          <div class="project-type">DATA ANALYSIS · CONSUMER</div>
-          <div class="project-title">Zomato Dataset Analysis</div>
-          <div class="project-desc">
-            Exploratory analysis of the Zomato restaurant dataset — <strong>user patterns, rating distributions,
-            cuisine trends, city-level insights</strong>. An early exercise in reading what data actually says
-            versus what you expect it to say.
-          </div>
-        </div>
-
-        <div class="project-card wide reveal d4">
-          <div class="project-type">STRATEGY · STARTUP DECKS</div>
-          <div class="project-title">Startup Pitch & Strategy Decks</div>
-          <div class="project-desc">
-            Worked on pitch and strategy decks across early-stage startups through PM fellowship and academic programmes:
-            <strong>WorkWave</strong> (workforce platform), <strong>AppFusion</strong>, <strong>Sprout Journey</strong>,
-            <strong>Aarvik</strong>, <strong>BeneathTheWaves</strong>, and a <strong>Social Emotional Learning</strong> initiative.
-            Each deck required first-principles understanding of the market, user, business model, and competitive position.
-            That groundwork is identical to the product brief you write before any feature conversation starts.
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ===== SKILLS ===== -->
-    <section id="skills">
-      <div class="section-label reveal">SKILLS &amp; TOOLS <span class="cursor-blink"></span></div>
-      <div class="skill-section">
-
-        <div class="skill-group reveal d1">
-          <div class="skill-group-label">Product</div>
-          <div class="skill-tags">
-            <span class="skill-tag primary">Product Strategy</span>
-            <span class="skill-tag primary">Roadmapping</span>
-            <span class="skill-tag primary">User Research</span>
-            <span class="skill-tag">Go-to-Market</span>
-            <span class="skill-tag">Prioritisation</span>
-            <span class="skill-tag">Stakeholder Mgmt</span>
-            <span class="skill-tag">OKRs / KPIs</span>
-            <span class="skill-tag">PRDs</span>
-          </div>
-        </div>
-
-        <div class="skill-group reveal d2">
-          <div class="skill-group-label">Analytics</div>
-          <div class="skill-tags">
-            <span class="skill-tag primary">Mixpanel</span>
-            <span class="skill-tag primary">Google Analytics</span>
-            <span class="skill-tag">Amplitude</span>
-            <span class="skill-tag">Data Storytelling</span>
-            <span class="skill-tag">Funnel Analysis</span>
-          </div>
-        </div>
-
-        <div class="skill-group reveal d2">
-          <div class="skill-group-label">Design &amp; PM Tools</div>
-          <div class="skill-tags">
-            <span class="skill-tag primary">Figma</span>
-            <span class="skill-tag">Notion</span>
-            <span class="skill-tag">Linear</span>
-            <span class="skill-tag">Jira</span>
-            <span class="skill-tag">Miro</span>
-          </div>
-        </div>
-
-        <div class="skill-group reveal d3">
-          <div class="skill-group-label">AI Tools</div>
-          <div class="skill-tags">
-            <span class="skill-tag primary">Claude</span>
-            <span class="skill-tag primary">Cursor</span>
-            <span class="skill-tag">ChatGPT</span>
-            <span class="skill-tag">Perplexity</span>
-          </div>
-        </div>
-
-        <div class="skill-group reveal d3">
-          <div class="skill-group-label">Daily Stack</div>
-          <div class="skill-tags">
-            <span class="skill-tag primary">Obsidian</span>
-            <span class="skill-tag primary">Granola</span>
-            <span class="skill-tag">Loom</span>
-            <span class="skill-tag">Notion</span>
-          </div>
-        </div>
-
-        <div class="skill-group reveal d4">
-          <div class="skill-group-label">Domain</div>
-          <div class="skill-tags">
-            <span class="skill-tag">Fintech / Payments</span>
-            <span class="skill-tag">AI/ML Products</span>
-            <span class="skill-tag">Data Analytics</span>
-            <span class="skill-tag">Compliance (CICRA)</span>
-            <span class="skill-tag">Gov't / Policy</span>
-            <span class="skill-tag">Content Tech / SEO</span>
-            <span class="skill-tag">Motorsport</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ===== EDUCATION & RECOGNITION ===== -->
-    <section id="education">
-      <div class="section-label reveal">EDUCATION &amp; RECOGNITION <span class="cursor-blink"></span></div>
-
-      <div class="edu-grid reveal d1">
-        <div class="edu-card">
-          <div class="edu-label">DEGREE</div>
-          <div class="edu-title">B.Sc. Data Analytics</div>
-          <div class="edu-sub">
-            <a href="https://dseu.ac.in" target="_blank">Delhi Skill and Entrepreneurship University ↗</a>
-          </div>
-          <div class="edu-sub" style="margin-top:5px;color:#444;">Graduated 2024</div>
-        </div>
-
-        <div class="patent-card">
-          <div class="patent-status-row">
-            <span class="patent-status-dot"></span>
-            <span class="patent-status-label">UNDER EXAMINATION</span>
-          </div>
-          <div class="patent-card-title">2 Patents — AI for Motorsport</div>
-          <div class="patent-card-body">
-            Both filings cover <strong>novel applications of machine learning in real-time competitive racing environments</strong> —
-            specifically in the decision layer where existing tooling falls short. The methods aren't public yet.
-            Filed 2024–25. What I can say: the problem space is real, the approach is new, and we're not
-            the first to want this — we're the first to build it this way.
-          </div>
-        </div>
-      </div>
-
-      <div class="edu-grid reveal d2" style="margin-top:2px;">
-        <div class="recognition-card">
-          <div class="rec-label">AUDIT RESULT</div>
-          <div class="rec-title">CICRA Compliance — SATISFACTORY</div>
-          <div class="rec-body">
-            Coordinated LegalPay's CICRA audit end-to-end. Conducted by Panacea InfoSec.
-            All controls cleared across Sections 19, 20, and 22.
-          </div>
-          <div class="rec-result">ZERO CRITICAL FINDINGS ✓</div>
-        </div>
-
-        <div class="edu-card">
-          <div class="edu-label">AVAILABILITY</div>
-          <div class="edu-title">Open to Relocation</div>
-          <div class="edu-sub" style="margin-top:5px;">
-            Available for full-time PM roles — India or abroad.<br>
-            Fintech, AI, deep-tech, and domain-specific products preferred.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CONTACT ===== -->
-    <section id="contact">
-      <div class="section-label reveal">CONTACT <span class="cursor-blink"></span></div>
-      <div class="contact-wrap reveal d1">
-        <div>
-          <div class="contact-heading">Let's talk product.</div>
-          <div class="contact-sub">
-            Open to new roles, consulting conversations, and interesting problems.
-            If you're building something that needs a PM who goes deep on the domain — reach out.
-          </div>
-        </div>
-        <div class="contact-links">
-          <a href="mailto:Dhruv.garg@raceengineering.ai" class="contact-row">
-            <span class="contact-row-label">EMAIL</span>
-            <span class="contact-row-val">Dhruv.garg@raceengineering.ai</span>
-            <span class="contact-row-arrow">↗</span>
-          </a>
-          <a href="https://linkedin.com/in/dhruv-garg" class="contact-row" target="_blank">
-            <span class="contact-row-label">LINKEDIN</span>
-            <span class="contact-row-val">linkedin.com/in/dhruv-garg</span>
-            <span class="contact-row-arrow">↗</span>
-          </a>
-          <a href="https://github.com/druvgarg-png" class="contact-row" target="_blank">
-            <span class="contact-row-label">GITHUB</span>
-            <span class="contact-row-val">github.com/druvgarg-png</span>
-            <span class="contact-row-arrow">↗</span>
-          </a>
-          <a href="https://raceengineering.ai" class="contact-row" target="_blank">
-            <span class="contact-row-label">COMPANY</span>
-            <span class="contact-row-val">raceengineering.ai</span>
-            <span class="contact-row-arrow">↗</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="footer-bar">
-      <span class="footer-text">© 2025 DHRUV GARG</span>
-      <span class="footer-text">PM · DELHI NCR</span>
+  <!-- ===== HERO ===== -->
+  <section id="hero">
+    <div class="hero-eye reveal">
+      <span class="ldot"></span>
+      BUILDING · RACE ENGINEERING · GPU CLOUD · INDIA
     </div>
-  </footer>
 
-  <script>
-    // ======= GLYPH STRIP =======
-    const strip = document.getElementById('glyphStrip');
-    const count = Math.floor((window.innerHeight - 140) / 10);
-    for (let i = 0; i < count; i++) {
-      const d = document.createElement('div');
-      d.className = 'gd';
-      d.style.animationDelay = (i * 0.07) + 's';
-      strip.appendChild(d);
-    }
+    <div class="avatar-wrap reveal d1">
+      <div class="aring"></div><div class="aring"></div>
+      <div class="avatar-inner">
+        <img src="photo.jpg" alt="Dhruv Garg"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="avatar-init" style="display:none">DG</span>
+      </div>
+    </div>
 
-    // ======= SCROLL REVEAL =======
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
-      });
-    }, { threshold: 0.05 });
-    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    <h1 class="reveal d2">Dhruv Garg<br><em>Product Manager</em></h1>
 
-    // Hero visible immediately
-    setTimeout(() => {
-      document.querySelectorAll('#hero .reveal').forEach(el => el.classList.add('visible'));
-    }, 60);
+    <p class="hero-sub reveal d3">
+      PM at <a href="https://raceengineering.ai" target="_blank">Race Engineering</a> —
+      <strong>India's GPU cloud marketplace</strong>. INR/UPI-native billing,
+      warm-container compute, built for ML practitioners. Previously fintech, government policy, AI SaaS.
+    </p>
 
-    // ======= NAV ACTIVE STATE =======
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    const onScroll = () => {
-      let current = '';
-      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
-      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-  </script>
+    <div class="pills reveal d4">
+      <span class="pill lit"><span class="ldot" style="width:5px;height:5px"></span>&nbsp; Open to Relocation</span>
+      <span class="pill">4+ Years PM</span>
+      <span class="pill">2 Patents Filed</span>
+      <span class="pill">Delhi NCR</span>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <div class="slabel reveal">ABOUT <span class="blink"></span></div>
+
+    <div class="about-body">
+      <p class="reveal d1">
+        I'm a product manager with a <strong>data analytics background</strong> — I think in systems,
+        care about instrumentation, and don't trust a metric I can't trace back to a source.
+        My approach to product is rooted in domain depth: understand the problem precisely before
+        reaching for a solution.
+      </p>
+      <p class="reveal d2">
+        My career has moved through <strong>fintech, government policy, content intelligence,
+        and now GPU cloud infrastructure</strong> — different industries, same thread: high-stakes
+        decisions, fragmented data, and stakeholders who don't always agree on what the
+        problem even is.
+      </p>
+      <p class="reveal d3">
+        I lead a team of 6 at Race Engineering — Frontend, Backend, AI/ML, and Product —
+        building the infrastructure layer India's AI ecosystem hasn't had access to before.
+        Separately, I'm working on a personal project with <strong>13 patent claims across
+        3 applications</strong>, currently pre-filing.
+      </p>
+    </div>
+
+    <div class="stat-strip reveal d4">
+      <div class="stat-item">
+        <div class="stat-n">4+</div>
+        <div class="stat-l">Years in Product</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n">5</div>
+        <div class="stat-l">Industries</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n">6</div>
+        <div class="stat-l">Team led at RACE</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n">13</div>
+        <div class="stat-l">Patent claims, 3 applications</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WORK ===== -->
+  <section id="work">
+    <div class="slabel reveal">EXPERIENCE <span class="blink"></span></div>
+    <div class="work-list">
+
+      <!-- RACE ENGINEERING -->
+      <div class="wcard feat reveal d1">
+        <div class="ca"></div><div class="cabr"></div>
+        <div class="whead">
+          <div>
+            <div class="wrole">Product Manager</div>
+            <div class="wcomprow">
+              <span class="wcomp">Race Engineering</span>
+              <a href="https://raceengineering.ai" class="wurl" target="_blank">raceengineering.ai ↗</a>
+              <span class="ldot" style="width:5px;height:5px"></span>
+            </div>
+          </div>
+          <span class="wperiod">2024 — PRESENT</span>
+        </div>
+
+        <div class="wtags">
+          <span class="tag">GPU CLOUD</span>
+          <span class="tag">AI INFRASTRUCTURE</span>
+          <span class="tag">INR / UPI-NATIVE</span>
+          <span class="tag">TEAM OF 6</span>
+          <span class="tag">INDIA-FIRST</span>
+        </div>
+
+        <div class="wcols">
+          <div>
+            <div class="wbl">THE PROBLEM</div>
+            <div class="wbt">
+              India's ML practitioners and developers need GPU compute — but global providers bill in USD,
+              require credit cards, and deliver cold-start containers. The <strong>tooling was built for
+              Silicon Valley, not Bengaluru</strong>.
+            </div>
+          </div>
+          <div>
+            <div class="wbl">WHAT I'M BUILDING</div>
+            <div class="wbt">
+              A <strong>GPU compute marketplace</strong> with INR/UPI-native billing, warm-container deployment
+              (sub-10s launch), and a loyalty economy — FLOP credits — built specifically for India's AI ecosystem.
+              Leading 6 people across Frontend, Backend, AI/ML, and Product.
+            </div>
+          </div>
+        </div>
+
+        <div class="wcallout">
+          Roadmap owner. Stakeholder interface. The person responsible for the product making sense to the
+          person renting an H100 in Hyderabad on UPI at 2am. <strong>That's the customer. That's the bar.</strong>
+        </div>
+      </div>
+
+      <!-- ZAVO -->
+      <div class="wcard reveal d2">
+        <div class="whead">
+          <div>
+            <div class="wrole">Associate Manager — Product</div>
+            <div class="wcomprow">
+              <span class="wcomp">Zavo</span>
+              <a href="https://thezavo.com" class="wurl" target="_blank">thezavo.com ↗</a>
+            </div>
+          </div>
+          <span class="wperiod">2023 — 2024</span>
+        </div>
+        <div class="wtags">
+          <span class="tag">PAYMENT PRODUCTS</span><span class="tag">PINE LABS</span>
+          <span class="tag">GIFT CARDS</span><span class="tag">OPS SETUP</span>
+        </div>
+        <div class="wcols">
+          <div>
+            <div class="wbl">THE PROBLEM</div>
+            <div class="wbt">
+              A digital gift card product needed to go live with <strong>Pine Labs as the payments backbone</strong> —
+              from zero. No spec, no ops workflow, no integration playbook.
+            </div>
+          </div>
+          <div>
+            <div class="wbl">WHAT I DID</div>
+            <div class="wbt">
+              Owned end-to-end product setup: spec, Pine Labs partner coordination,
+              user flow design, ops runbook, go-live sign-off.
+              <strong>First payment pipeline I took from blank doc to working transaction.</strong>
+            </div>
+          </div>
+        </div>
+        <div class="wcallout">Gift card issuance live. End-to-end transaction pipeline operational.</div>
+      </div>
+
+      <!-- LEGALPAY -->
+      <div class="wcard reveal d2">
+        <div class="whead">
+          <div>
+            <div class="wrole">Product</div>
+            <div class="wcomprow">
+              <span class="wcomp">LegalPay Technology</span>
+              <a href="https://legalpay.in" class="wurl" target="_blank">legalpay.in ↗</a>
+            </div>
+          </div>
+          <span class="wperiod">2022 — 2023</span>
+        </div>
+        <div class="wtags">
+          <span class="tag">FINTECH</span><span class="tag">LITIGATION FINANCE</span>
+          <span class="tag">CICRA AUDIT</span><span class="tag">COMPLIANCE</span>
+        </div>
+        <div class="wcols">
+          <div>
+            <div class="wbl">THE PROBLEM</div>
+            <div class="wbt">
+              CICRA compliance audit — aligning a live fintech across product, tech, and ops
+              for an external auditor. <strong>Not a coordination task you can improvise.</strong>
+            </div>
+          </div>
+          <div>
+            <div class="wbl">WHAT I DID</div>
+            <div class="wbt">
+              Led end-to-end audit coordination with Panacea InfoSec: mapped controls, owned
+              internal alignment, ensured every section had a clear owner before
+              <strong>the external team walked in</strong>.
+            </div>
+          </div>
+        </div>
+        <div class="wcallout">
+          All controls cleared across Sections 19, 20 &amp; 22. <strong>Zero critical findings. SATISFACTORY ✓</strong>
+        </div>
+      </div>
+
+      <!-- SCALENUT -->
+      <div class="wcard reveal d3">
+        <div class="whead">
+          <div>
+            <div class="wrole">Product</div>
+            <div class="wcomprow">
+              <span class="wcomp">Scalenut</span>
+              <a href="https://www.scalenut.com" class="wurl" target="_blank">scalenut.com ↗</a>
+            </div>
+          </div>
+          <span class="wperiod">2022</span>
+        </div>
+        <div class="wtags"><span class="tag">AI SAAS</span><span class="tag">CONTENT INTELLIGENCE</span><span class="tag">SEO</span></div>
+        <div class="wcols full">
+          <div>
+            <div class="wbl">CONTEXT</div>
+            <div class="wbt">
+              AI-powered content intelligence platform. Product work on <strong>SEO tooling and
+              content workflow features</strong> — in a fast-moving AI SaaS environment where
+              shipping pace is the baseline expectation.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MHI -->
+      <div class="wcard reveal d3">
+        <div class="whead">
+          <div>
+            <div class="wrole">Project Trainee</div>
+            <div class="wcomprow">
+              <span class="wcomp">Ministry of Heavy Industries</span>
+              <a href="https://heavyindustries.gov.in" class="wurl" target="_blank">heavyindustries.gov.in ↗</a>
+            </div>
+          </div>
+          <span class="wperiod">2021</span>
+        </div>
+        <div class="wtags"><span class="tag">GOVERNMENT</span><span class="tag">EV POLICY</span><span class="tag">NATIONAL SCALE</span></div>
+        <div class="wcols full">
+          <div>
+            <div class="wbl">CONTEXT</div>
+            <div class="wbt">
+              Policy documentation and project tracking at national scale. Contributed to
+              <strong>EV infrastructure policy work</strong> — the structured rigour of government
+              decision-making is a useful counterweight to startup speed. Both have shaped how I
+              think about accountability in product.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== PATENTS (personal, standalone) ===== -->
+  <section id="patents">
+    <div class="slabel reveal">PERSONAL PROJECT — IP <span class="blink"></span></div>
+
+    <div class="patent-wrap reveal d1">
+      <div class="patent-main">
+        <div class="patent-tag">
+          <span class="patent-tag-dot"></span>
+          PRE-FILING · CONFIDENTIAL · INDIA + US
+        </div>
+        <div class="patent-h">When Google Maps stops — this picks up.</div>
+        <div class="patent-body">
+          <p>
+            Google Maps gets a delivery partner to your building gate.
+            Past that — through the internal lanes, past the parking lot, up the right lift, to the actual door —
+            it's <strong>completely blind</strong>. So every delivery partner calls the resident.
+            Every time. For every delivery.
+          </p>
+          <p>
+            I built a platform that eliminates that call. Residents draw their own path from gate to door once —
+            with their finger on a map. Every delivery partner, guest, or visitor who arrives at the gate
+            follows it live on their phone. <strong>No call. No confusion. No repeat.</strong>
+          </p>
+          <p>
+            The product introduces concepts that don't exist anywhere in the prior art:
+            a portable location identity that any platform can call via open API,
+            AR guidance through private spaces recorded by the resident once,
+            and time-conditioned routing that switches entry points automatically at dispatch.
+          </p>
+          <p style="color:#666;font-size:14px">
+            13 patent claims across 3 applications. India provisional first, US provisional strategy in parallel.
+            Nothing disclosed publicly until filing is complete — which is why this description stays vague.
+          </p>
+        </div>
+      </div>
+
+      <div class="patent-claims">
+        <div class="claim-card">
+          <div class="claim-num">APPLICATION 01 — LOCATION IDENTITY</div>
+          <div class="claim-title">@username that navigates you to someone's door</div>
+          <div class="claim-desc">
+            A portable user handle that resolves — across any platform, via open API, without a bilateral deal —
+            to a complete navigation profile including route, time rules, and drop-off preferences.
+            Zomato and Amazon can both call it. They get different gates.
+          </div>
+        </div>
+        <div class="claim-card">
+          <div class="claim-num">APPLICATION 02 — NAVIGATION EXPERIENCE</div>
+          <div class="claim-title">AR from gate to door, through spaces no map knows</div>
+          <div class="claim-desc">
+            Resident records a walkthrough once. Delivery partner's camera shows AR arrows
+            guiding them exactly where the resident walked — through private buildings,
+            unmapped compounds, to the actual door. Prior art covers public outdoor spaces.
+            This covers everywhere else.
+          </div>
+        </div>
+        <div class="claim-card">
+          <div class="claim-num">APPLICATION 03 — PLATFORM & PRIVACY</div>
+          <div class="claim-title">Coordinates that never leave the server</div>
+          <div class="claim-desc">
+            The delivery partner's phone receives "turn left in 20m" — never raw GPS coordinates.
+            Your home's location stays on the server. DPDP Act compliant by architecture, not by policy.
+            The asymmetry (resident draws, partner follows, neither can switch roles) is enforced at API layer.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects">
+    <div class="slabel reveal">PROJECTS <span class="blink"></span></div>
+    <div class="proj-grid">
+
+      <div class="pcard reveal d1">
+        <div class="ca"></div>
+        <div class="ptype">PM · PAYMENTS</div>
+        <div class="ptitle">Pine Labs Gift Card Integration — Zavo</div>
+        <div class="pdesc">
+          Full product ownership of a <strong>digital gift card product on Pine Labs</strong>.
+          Spec → integration → ops workflow → go-live. Blank doc to working transaction.
+        </div>
+        <a href="https://thezavo.com" class="plink" target="_blank">Zavo ↗</a>
+      </div>
+
+      <div class="pcard reveal d1">
+        <div class="ptype">COMPLIANCE · FINTECH</div>
+        <div class="ptitle">CICRA Audit — LegalPay</div>
+        <div class="pdesc">
+          End-to-end audit coordination with <strong>Panacea InfoSec</strong>.
+          Sections 19, 20, 22 cleared. Zero critical findings. SATISFACTORY ✓
+        </div>
+        <a href="https://legalpay.in" class="plink" target="_blank">LegalPay ↗</a>
+      </div>
+
+      <div class="pcard reveal d2">
+        <div class="ptype">PM THINKING · EDTECH</div>
+        <div class="ptitle">AdmitKard — APM Assessment</div>
+        <div class="pdesc">
+          Structured APM case study for a study abroad admissions platform.
+          <strong>Problem framing, prioritisation, and feature design</strong>
+          in a consumer education context where the emotional stakes are high.
+        </div>
+      </div>
+
+      <div class="pcard reveal d2">
+        <div class="ptype">POLICY · EV INFRASTRUCTURE</div>
+        <div class="ptitle">IGNITE — EV Policy Paper</div>
+        <div class="pdesc">
+          Contributed to a policy document on <strong>Incentivizing Green New-age Infrastructure
+          and Technology for EVs</strong> during the Ministry of Heavy Industries placement.
+          National scale, structured thinking, real stakes.
+        </div>
+      </div>
+
+      <div class="pcard reveal d3">
+        <div class="ptype">DATA ANALYSIS · SPORTS</div>
+        <div class="ptitle">IPL Data Analysis</div>
+        <div class="pdesc">
+          Statistical analysis of <strong>IPL match data</strong> — performance patterns, team metrics,
+          outcome modelling. The same instincts that go into product instrumentation.
+        </div>
+      </div>
+
+      <div class="pcard reveal d3">
+        <div class="ptype">DATA ANALYSIS · CONSUMER</div>
+        <div class="ptitle">Zomato Dataset Analysis</div>
+        <div class="pdesc">
+          Exploratory analysis — <strong>user behaviour, rating distributions, city-level patterns</strong>.
+          An exercise in reading what data actually says vs. what you expect.
+        </div>
+      </div>
+
+      <div class="pcard wide reveal d4">
+        <div class="ptype">STRATEGY · STARTUP DECKS</div>
+        <div class="ptitle">Startup Pitch &amp; Strategy Decks</div>
+        <div class="pdesc">
+          Pitch and strategy decks across early-stage startups through PM and academic programmes:
+          <strong>WorkWave</strong> (workforce platform), <strong>AppFusion</strong>,
+          <strong>Sprout Journey</strong>, <strong>Aarvik</strong>, <strong>BeneathTheWaves</strong>,
+          and a <strong>Social Emotional Learning</strong> initiative. Market, user, model, competition —
+          standard groundwork before any feature conversation starts.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== ARTICLES ===== -->
+  <section id="articles">
+    <div class="slabel reveal">WRITING <span class="blink"></span></div>
+    <div class="art-grid">
+
+      <a href="https://raceengineering.ai" class="acard reveal d1" target="_blank">
+        <div class="ca"></div>
+        <div class="atopic">GPU CLOUD · RACE ENGINEERING</div>
+        <div class="atitle">GPU Compute in India — why the existing market misses the real customer</div>
+        <div class="adesc">
+          On building a compute marketplace for ML practitioners who pay in INR, not USD — and why that
+          distinction reshapes every product decision.
+        </div>
+        <div class="ameta">RACE ENGINEERING BLOG ↗</div>
+      </a>
+
+      <a href="https://raceengineering.ai" class="acard reveal d1" target="_blank">
+        <div class="atopic">INFRASTRUCTURE · LATENCY</div>
+        <div class="atitle">Cold starts kill developer flow — the case for warm-container GPU deployment</div>
+        <div class="adesc">
+          Why sub-10s container launch isn't a nice-to-have for ML practitioners — and how it changes
+          the unit economics of experimentation.
+        </div>
+        <div class="ameta">RACE ENGINEERING BLOG ↗</div>
+      </a>
+
+      <a href="https://raceengineering.ai" class="acard reveal d2" target="_blank">
+        <div class="atopic">LOYALTY ECONOMY · PRODUCT</div>
+        <div class="atitle">FLOP credits — designing a loyalty economy for GPU compute</div>
+        <div class="adesc">
+          On building a rewards system (FLOP credits) for a compute marketplace where the currency
+          is literally floating-point operations — and why that's not a gimmick.
+        </div>
+        <div class="ameta">RACE ENGINEERING BLOG ↗</div>
+      </a>
+
+      <div class="art-coming reveal d3">
+        <div class="art-coming-text">MORE WRITING IN PROGRESS <span class="blink" style="width:5px;height:10px;margin-left:6px"></span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills">
+    <div class="slabel reveal">SKILLS &amp; TOOLS <span class="blink"></span></div>
+    <div class="skill-rows">
+      <div class="skill-row reveal d1">
+        <div class="skill-rlabel">Product</div>
+        <div class="stags">
+          <span class="stag p">Product Strategy</span><span class="stag p">Roadmapping</span>
+          <span class="stag p">User Research</span><span class="stag">Go-to-Market</span>
+          <span class="stag">Prioritisation</span><span class="stag">Stakeholder Mgmt</span>
+          <span class="stag">OKRs</span><span class="stag">PRDs</span>
+        </div>
+      </div>
+      <div class="skill-row reveal d2">
+        <div class="skill-rlabel">Analytics</div>
+        <div class="stags">
+          <span class="stag p">Mixpanel</span><span class="stag p">Google Analytics</span>
+          <span class="stag">Amplitude</span><span class="stag">Funnel Analysis</span><span class="stag">Data Storytelling</span>
+        </div>
+      </div>
+      <div class="skill-row reveal d2">
+        <div class="skill-rlabel">Design &amp; PM</div>
+        <div class="stags">
+          <span class="stag p">Figma</span><span class="stag">Notion</span>
+          <span class="stag">Linear</span><span class="stag">Jira</span><span class="stag">Miro</span>
+        </div>
+      </div>
+      <div class="skill-row reveal d3">
+        <div class="skill-rlabel">AI Tools</div>
+        <div class="stags">
+          <span class="stag p">Claude</span><span class="stag p">Cursor</span>
+          <span class="stag">ChatGPT</span><span class="stag">Perplexity</span>
+        </div>
+      </div>
+      <div class="skill-row reveal d3">
+        <div class="skill-rlabel">Daily Stack</div>
+        <div class="stags">
+          <span class="stag p">Obsidian</span><span class="stag p">Granola</span>
+          <span class="stag">Loom</span><span class="stag">Notion</span>
+        </div>
+      </div>
+      <div class="skill-row reveal d4">
+        <div class="skill-rlabel">Domain</div>
+        <div class="stags">
+          <span class="stag">GPU Cloud / AI Infra</span><span class="stag">Fintech / Payments</span>
+          <span class="stag">Data Analytics</span><span class="stag">Compliance (CICRA)</span>
+          <span class="stag">Gov't Policy</span><span class="stag">Content Tech</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section id="education">
+    <div class="slabel reveal">EDUCATION &amp; RECOGNITION <span class="blink"></span></div>
+    <div class="edu-grid reveal d1">
+      <div class="ecard">
+        <div class="elabel">DEGREE</div>
+        <div class="etitle">B.Sc. Data Analytics</div>
+        <div class="esub">
+          <a href="https://dseu.ac.in" target="_blank">Delhi Skill and Entrepreneurship University ↗</a>
+        </div>
+        <div class="esub" style="margin-top:5px;color:#444">Graduated 2024</div>
+      </div>
+      <div class="rec-card">
+        <div class="elabel">AUDIT RESULT</div>
+        <div class="etitle">CICRA Compliance — SATISFACTORY</div>
+        <div class="esub">Coordinated LegalPay's CICRA audit (Panacea InfoSec). All controls across Sections 19, 20 &amp; 22 cleared.</div>
+        <div class="rec-result">ZERO CRITICAL FINDINGS ✓</div>
+      </div>
+    </div>
+    <div class="edu-grid reveal d2" style="margin-top:2px">
+      <div class="ecard">
+        <div class="elabel">AVAILABILITY</div>
+        <div class="etitle">Open to Relocation</div>
+        <div class="esub" style="margin-top:4px">Full-time PM roles — India or abroad. GPU cloud, AI infra, fintech, and domain-specific products.</div>
+      </div>
+      <div class="ecard">
+        <div class="elabel">LANGUAGES</div>
+        <div class="etitle">Hindi + English</div>
+        <div class="esub" style="margin-top:4px">Hindi — Native &nbsp;·&nbsp; English — Professional</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="slabel reveal">CONTACT <span class="blink"></span></div>
+    <div class="contact-grid reveal d1">
+      <div class="contact-left">
+        <div>
+          <div class="contact-h">Say hello.</div>
+          <div class="contact-sub">druvgarg.work@gmail.com</div>
+        </div>
+        <div style="margin-top:32px">
+          <div style="font-family:'Space Mono',monospace;font-size:9px;color:#2d2d2d;letter-spacing:.12em">DELHI NCR · INDIA · 2025</div>
+        </div>
+      </div>
+      <div class="contact-right">
+        <a href="mailto:druvgarg.work@gmail.com" class="crow">
+          <span class="crow-l">EMAIL</span>
+          <span class="crow-v">druvgarg.work@gmail.com</span>
+          <span class="crow-arr">↗</span>
+        </a>
+        <a href="https://linkedin.com/in/dhruv-garg" class="crow" target="_blank">
+          <span class="crow-l">LINKEDIN</span>
+          <span class="crow-v">linkedin.com/in/dhruv-garg</span>
+          <span class="crow-arr">↗</span>
+        </a>
+        <a href="https://github.com/druvgarg-png" class="crow" target="_blank">
+          <span class="crow-l">GITHUB</span>
+          <span class="crow-v">github.com/druvgarg-png</span>
+          <span class="crow-arr">↗</span>
+        </a>
+        <a href="https://raceengineering.ai" class="crow" target="_blank">
+          <span class="crow-l">COMPANY</span>
+          <span class="crow-v">raceengineering.ai</span>
+          <span class="crow-arr">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot-bar">
+    <span class="foot-t">© 2025 DHRUV GARG</span>
+    <span class="foot-t">PM · DELHI NCR</span>
+  </div>
+</footer>
+
+<script>
+  // GLYPH STRIP
+  const gs = document.getElementById('gs');
+  const cnt = Math.floor((window.innerHeight - 130) / 9);
+  for(let i=0;i<cnt;i++){
+    const d=document.createElement('div');d.className='gd';
+    d.style.animationDelay=(i*.068)+'s';gs.appendChild(d);
+  }
+
+  // SCROLL REVEAL
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}});
+  },{threshold:.05});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  setTimeout(()=>{document.querySelectorAll('#hero .reveal').forEach(el=>el.classList.add('vis'))},60);
+
+  // NAV ACTIVE
+  const secs=document.querySelectorAll('section[id]');
+  const nls=document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll',()=>{
+    let cur='';
+    secs.forEach(s=>{if(window.scrollY>=s.offsetTop-130)cur=s.id});
+    nls.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
+  },{passive:true});
+</script>
 </body>
 </html>
