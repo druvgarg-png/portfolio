@@ -198,15 +198,12 @@
     }
     @keyframes breathe{0%,100%{opacity:.5}50%{opacity:1}}
 
-    /* GRAIN */
+    /* GRAIN — static, no animation */
     body::after{
-      content:'';position:fixed;inset:-50%;width:200%;height:200%;
+      content:'';position:fixed;inset:0;width:100%;height:100%;
       background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      opacity:.03;pointer-events:none;z-index:0;
-      animation:grain .15s steps(1) infinite;
-    }
-    @keyframes grain{
-      0%{transform:translate(0,0)}25%{transform:translate(-3%,-2%)}
+      opacity:.025;pointer-events:none;z-index:0;
+    }25%{transform:translate(-3%,-2%)}
       50%{transform:translate(3%,2%)}75%{transform:translate(-2%,3%)}
     }
 
@@ -246,18 +243,28 @@
       width:3px;height:3px;border-radius:50%;background:var(--active-dot);
     }
 
-    /* THEME SWITCHER — 3-way */
-    .theme-switcher{display:flex;align-items:center;gap:2px}
-    .ts-opt{
-      background:none;border:none;cursor:pointer;
-      font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.13em;text-transform:uppercase;
-      color:var(--t5);padding:5px 9px;border-radius:2px;
-      transition:color .35s cubic-bezier(.22,1,.36,1),background .35s;
+    /* THEME SWITCHER — dot indicators */
+    .theme-switcher{display:flex;align-items:center;gap:10px;padding:0 4px}
+    .ts-dot{
+      width:5px;height:5px;border-radius:50%;
+      background:var(--t5);
+      border:none;cursor:pointer;padding:0;flex-shrink:0;
+      transition:background .25s,transform .25s,opacity .25s;
+      opacity:.45;
+      position:relative;
     }
-    .ts-opt:hover{color:var(--t2)}
-    .ts-opt.active{color:var(--t2);background:rgba(255,255,255,.07)}
-    body.light .ts-opt.active{background:rgba(0,0,0,.05)}
-    body.basic .ts-opt.active{color:#4285f4;background:rgba(66,133,244,.08)}
+    .ts-dot::after{
+      content:attr(data-label);
+      position:absolute;bottom:-20px;left:50%;
+      transform:translateX(-50%);
+      font-family:'Space Mono',monospace;font-size:7px;letter-spacing:.12em;
+      color:var(--t4);white-space:nowrap;
+      opacity:0;transition:opacity .15s;pointer-events:none;
+    }
+    .ts-dot:hover{opacity:.75;transform:scale(1.5)}
+    .ts-dot:hover::after{opacity:1}
+    .ts-dot.active{background:var(--t1);opacity:1;transform:scale(1.8)}
+    body.basic .ts-dot.active{background:#4285f4}
 
     /* GLYPH STRIP */
     .glyph-strip{
@@ -267,12 +274,16 @@
       border-left:1px solid var(--b1);
     }
     .gd{
-      width:4px;height:4px;border-radius:50%;flex-shrink:0;
-      background:var(--g-off);
+      width:3px;height:3px;border-radius:50%;flex-shrink:0;
+      background:var(--g-on);
+      opacity:.1;
       animation:gw 5s cubic-bezier(.45,0,.55,1) infinite;
+      will-change:opacity;
     }
     @keyframes gw{
-      0%,100%{background:var(--g-off);transform:scale(1);box-shadow:none;opacity:.45}
+      0%,100%{opacity:.08}
+      50%{opacity:.9}
+    }
       50%{background:var(--g-on);transform:scale(2.4);box-shadow:0 0 16px var(--g-glow);opacity:1}
     }
 
@@ -601,7 +612,8 @@
     /* SCROLL PROGRESS — thin, sharp */
     #prog{position:fixed;top:0;left:0;right:0;height:1px;z-index:1001;
       transform:scaleX(0);transform-origin:left;
-      background:rgba(255,255,255,0.45)}
+      background:rgba(255,255,255,0.45);
+      will-change:transform}
     body.light #prog{background:rgba(0,0,0,0.25)}
     body.basic #prog{background:#4285f4}
 
@@ -643,11 +655,10 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="theme-switcher" id="themeSwitcher" role="group" aria-label="Theme">
-    <button class="ts-opt" data-theme="dark">DARK</button>
-    <button class="ts-opt" data-theme="light">LIGHT</button>
-    <button class="ts-opt" data-theme="basic">BASIC</button>
-  </div>
-</nav>
+    <button class="ts-dot" data-theme="dark" data-label="DARK" aria-label="Dark theme"></button>
+    <button class="ts-dot" data-theme="light" data-label="LIGHT" aria-label="Light theme"></button>
+    <button class="ts-dot" data-theme="basic" data-label="BASIC" aria-label="Basic theme"></button>
+  </div></nav>
 
 <!-- SPOTLIGHT + CURSOR -->
 <div id="spotlight" aria-hidden="true"></div>
@@ -1126,8 +1137,8 @@
   document.querySelectorAll('.reveal').forEach(el=>ob.observe(el));
   setTimeout(()=>document.querySelectorAll('#hero .reveal').forEach(el=>el.classList.add('vis')),60);
 
-  // THEME SWITCHER
-  const tsOpts=document.querySelectorAll('.ts-opt');
+  // THEME SWITCHER — dot version
+  const tsOpts=document.querySelectorAll('.ts-dot');
   function applyTheme(t){
     document.body.classList.remove('light','basic');
     if(t==='light')document.body.classList.add('light');
